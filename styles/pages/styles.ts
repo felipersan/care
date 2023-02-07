@@ -115,4 +115,21 @@ export const Container = styled.main`
       padding: 30px 20px;
     }
   }
+  .qualitiesWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 90px 109px;
+    grid-gap: 20px;
+    @media (max-width: 1000px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 600px) {
+      padding: 90px 30px;
+    }
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr ;
+
+    }
+  }
+  }
 `

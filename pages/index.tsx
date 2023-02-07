@@ -7,6 +7,8 @@ import bgStars from '../public/images/bgStars.png'
 import business from '../public/images/business.png'
 import List from '../components/List'
 import ButtonWpp from '../components/ButtonWpp'
+import QualityItem from '../components/QualityItem'
+import { HandleIcon, MedalIcon, TaxIcon, TrophyIcon } from '../public/icons'
 
 export default function Home() {
   return (
@@ -25,6 +27,8 @@ export default function Home() {
           <strong className="strongOrange">RESPONSÁVEL</strong>
         </p>
       </header>
+
+      {/* first section */}
       <section className="mainSection">
         <Image
           src={bgStars}
@@ -67,6 +71,29 @@ export default function Home() {
             className="imageBusiness"
           />
         </div>
+      </section>
+
+      <section className="qualitiesWrapper">
+        <QualityItem
+          description="Oferecemos serviço de alta qualidade e profissionalismo. Garantimos soluções precisas e eficientes para todas as suas necessidades contábeis."
+          title="Somos Profissionais"
+          icon={<MedalIcon />}
+        />
+        <QualityItem
+          description="Com anos de experiência nós entendemos qual a melhor solução para os empresários contratados como PJ. Não precisa se preocupar, vamos cuidar muito bem de você."
+          title="Especialistas em contrato PJ"
+          icon={<TrophyIcon />}
+        />
+        <QualityItem
+          description="Nós acreditamos que a excelência financeira não precisa ser cara. Oferecemos os melhores valores do mercado, sem comprometer a qualidade e eficiência de nossos serviços."
+          title="Sem taxas abusivas"
+          icon={<TaxIcon />}
+        />
+        <QualityItem
+          description="Oferecemos um atendimento personalizado e humanizado, priorizando sempre as necessidades e expectativas de nossos clientes."
+          title="Atendimento Humanizado"
+          icon={<HandleIcon />}
+        />
       </section>
     </S.Container>
   )
