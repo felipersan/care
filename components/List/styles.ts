@@ -3,7 +3,11 @@ import { Nunito_Sans } from '@next/font/google'
 
 const nunito_sans = Nunito_Sans({ weight: ['400'], subsets: ['latin'] })
 
-export const Container = styled.div`
+interface IProps {
+  color?: string;
+}
+
+export const Container = styled.div<IProps>`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
@@ -13,9 +17,9 @@ export const Container = styled.div`
     font-weight: 400;
     font-size: 13.75px;
     line-height: 19px;
-    color: #ffffff;
+    color: ${({ color }) => color ? color : 'white'};
     display: flex;
     gap: 8px;
     align-items: center;
   }
-`
+`;

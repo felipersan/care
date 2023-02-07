@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
-import { Roboto, Nunito_Sans } from '@next/font/google'
+import { Roboto, Nunito_Sans, Rubik } from '@next/font/google'
 const roboto = Roboto({ weight: ['100', '500', '900'], subsets: ['latin'] })
 const nunito_sans = Nunito_Sans({ weight: ['400'], subsets: ['latin'] })
+const rubik = Rubik({ weight: ["400"], subsets: ["latin"] });
 
 export const Container = styled.main`
+  background-color: white;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -131,5 +133,101 @@ export const Container = styled.main`
 
     }
   }
-  }
 `
+
+export const ThirdSection = styled.section`
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  background-color: rgba(156, 196, 228, 0.3);
+  padding: 5rem 2rem;
+  .image-third-section {
+    max-width: 100%;
+    object-fit: contain;
+    @media (max-width: 512px) {
+      height: 100%;
+    }
+  }
+  .text-third-section {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    max-width: 580px;
+    h3 {
+      font-family: ${nunito_sans.style.fontFamily};
+      color: rgba(242, 108, 79, 1);
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    h2 {
+      font-family: ${nunito_sans.style.fontFamily};
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      color: #404041;
+    }
+  }
+  .checklist-container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+`;
+
+export const FourthSection = styled.section`
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  h2 {
+    font-family: ${nunito_sans.style.fontFamily};
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    color: #262626;
+    text-align: center;
+    span {
+      color: #3a89c9;
+    }
+  }
+  .p-fourth-section {
+    font-family: ${nunito_sans.style.fontFamily};
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+    max-width: 945px;
+    margin-bottom: 4rem;
+  }
+`;
+
+export const FiveSection = styled.section`
+  padding: 5rem 2rem;
+  background-color: rgba(156, 196, 228, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    font-family: ${nunito_sans.style.fontFamily};
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    color: #3a89c9;
+  }
+  h4 {
+    font-family: ${rubik.style.fontFamily};
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #0b132a;
+  }
+  .flex-cards{
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+`;
