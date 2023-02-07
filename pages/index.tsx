@@ -1,14 +1,14 @@
-import Image from 'next/image'
-import * as S from '../styles/pages/styles'
+import Image from "next/image";
+import * as S from "../styles/pages/styles";
 
 //import images
-import logo from '../public/images/logo.png'
-import bgStars from '../public/images/bgStars.png'
-import business from '../public/images/business.png'
+import logo from "../public/images/logo.png";
+import bgStars from "../public/images/bgStars.png";
+import business from "../public/images/business.png";
 import alvo from "../public/images/business.png";
-import List from '../components/List'
-import ButtonWpp from '../components/ButtonWpp'
-import QualityItem from '../components/QualityItem'
+import List from "../components/List";
+import ButtonWpp from "../components/ButtonWpp";
+import QualityItem from "../components/QualityItem";
 import {
   HandleIcon,
   MedalIcon,
@@ -16,7 +16,8 @@ import {
   TrophyIcon,
   MoneyIcon,
 } from "../public/icons";
-import { CardQuality } from '../components/CardQuality'
+import { CardQuality } from "../components/CardQuality";
+import { CardReport } from "../components/CardReport";
 
 const cardList = [
   {
@@ -33,6 +34,40 @@ const cardList = [
     icon: <MoneyIcon color="white" size={30} />,
     title: "Melhores Valores",
     text: "Nós acreditamos que a excelência financeira não precisa ser cara. Oferecemos os melhores valores do mercado, sem comprometer a qualidade e eficiência de nossos serviços.",
+  },
+];
+
+const reportsList = [
+  {
+    name: "Vanessa Dias - Engenheira",
+    text: "Quando recebi a proposta de trabalhar como PJ fiquei assustada e com medo da burocracia. Fui muito bem orientada pela equipe da Care, que me tranquilizou e mostrou que o caminho para ser uma empresária eficiente pode ser mais simples que imaginamos.",
+  },
+  {
+    name: "William Castro - Representante Comercial",
+    text: "Contabilidade facilitada, com processos simplificados. Consigo me dedicar às minhas tarefas e ser mais produtivo, sabendo que as questões burocráticas estão em boas mãos.",
+  },
+  {
+    name: "Tadeu Marinho - Fisioterapeuta",
+    text: "Serviço prestado com excelência, com valor abaixo daquele cobrado por escritórios tradicionais. Além disso, com uma consultoria tributária esclarecedora, descobri que pagava mais impostos que o necessário e hoje estou aplicando a diferença na melhoria do meu negócio.",
+  },
+];
+
+const doubtsList = [
+  {
+    question: "Por que preciso de um contador?",
+    answer:
+      "Além das questões fiscais, planejamento tributário e e apoio à administração, há uma razão fundamental: a tributação do lucro do empresário. A Lei Complementar N° 123/2006 (Estatuto do Simples Nacional) estabelece que caso a empresa mantenha escrituração contábil, todo o lucro será isento de Imposto de Renda.",
+  },
+  {
+    question:
+      "Contabilidade a um baixo custo implica em perda de qualidade no atendimento?",
+    answer:
+      "De maneira nenhuma. Um modelo de start-up contábil como o nosso dispensa espaços físicos exagerados e equipe numerosa, permitindo operar com baixo custo. Esta é a razão do nosso preço competitivo e em nada interfe na excelência do serviço prestado por nossos profissionais competentes.",
+  },
+  {
+    question: "Serei atendido por um robô?",
+    answer:
+      "Não. Sabemos que a experiência de ser atendido por robôs nem sempre é satisfatória, sobretudo quando não resolvem nossos problemas naqueles momentos em que mais precisamos. Nosso atendimento é 100% humanizado, permitindo interação em tempo real com nossa equipe.",
   },
 ];
 
@@ -86,7 +121,7 @@ export default function Home() {
           />
           <div className="buttonWrapper">
             <ButtonWpp title="CONVERSAR COM UM ATENDENTE" />
-            <p className="email">email@email.com</p>
+            <p className="email">atendimento@carecontabilidade.com.br</p>
           </div>
         </div>
         <div className="rigthSide">
@@ -174,10 +209,43 @@ export default function Home() {
       <S.FiveSection>
         <h2>MUDAR PARA O PJ PODE SER MAIS SIMPLES DO QUE VOCÊ IMAGINA</h2>
         <h4>Porque Nós Estamos Do Seu Lado</h4>
-        <article className="flex-cards">{cardList.map((element, index) => {
-          return <CardQuality info={element} key={element.title + " " + index} />;
-        })}</article>
+        <article className="flex-cards">
+          {cardList.map((element, index) => {
+            return (
+              <CardQuality info={element} key={element.title + " " + index} />
+            );
+          })}
+        </article>
       </S.FiveSection>
+      <S.SixSection>
+        <h2>O que nossos clientes dizem de nós ?</h2>
+        <article className="six-section">
+          {reportsList.map((element, index) => {
+            return (
+              <CardReport key={element.name + " " + index} info={element} />
+            );
+          })}
+        </article>
+      </S.SixSection>
+      <S.SevenSection>
+        <h2>Dúvidas frequentes...</h2>
+        <span>
+          Bem-vindo ao nosso FAQ! Aqui você encontrará as respostas para as
+          perguntas mais comuns sobre nosso escritório de contabilidade. Se você
+          não encontrar a informação que precisa, por favor, não hesite em{" "}
+          <a href="">entrar em contato conosco</a>.
+        </span>
+        {doubtsList.map((element, index) => {
+          return (
+            <S.DoubtsContainer
+              key={"Questão " + element.question + " " + index}
+            >
+              <h3>{element.question}</h3>
+              <p>{element.answer}</p>
+            </S.DoubtsContainer>
+          );
+        })}
+      </S.SevenSection>
     </S.Container>
   );
 }

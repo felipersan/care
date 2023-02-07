@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
-import { Roboto, Nunito_Sans, Rubik } from '@next/font/google'
+import { Roboto, Nunito_Sans, Rubik, Ibarra_Real_Nova } from '@next/font/google'
 const roboto = Roboto({ weight: ['100', '500', '900'], subsets: ['latin'] })
 const nunito_sans = Nunito_Sans({ weight: ['400'], subsets: ['latin'] })
 const rubik = Rubik({ weight: ["400"], subsets: ["latin"] });
+const ibarra = Ibarra_Real_Nova({ weight: ["400"], subsets: ["latin"] });
 
 export const Container = styled.main`
   background-color: white;
@@ -229,5 +230,78 @@ export const FiveSection = styled.section`
     align-items: flex-start;
     justify-content: space-evenly;
     flex-wrap: wrap;
+  }
+`;
+
+export const SixSection = styled.section`
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    font-family: ${rubik.style.fontFamily};
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    color: #1c1829;
+    margin-bottom: 5rem;
+  }
+  .six-section{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    height: max-content;
+    justify-content: space-evenly;
+  }
+`;
+
+export const SevenSection = styled.section`
+  padding: 5rem 2rem;
+  background-color: rgba(156, 196, 228, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    font-family: ${nunito_sans.style.fontFamily};
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    color: #262626;
+  }
+  span {
+    font-family: ${nunito_sans.style.fontFamily};
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    color: #979797;
+    max-width: 665px;
+    margin-bottom: 3rem;
+  }
+  a {
+    text-decoration-line: underline;
+    color: #1d57ec;
+  }
+`;
+
+export const DoubtsContainer = styled.article`
+  max-width: 880px;
+  h3 {
+    font-family: ${ibarra.style.fontFamily};
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.03em;
+    color: #000000;
+  }
+  p {
+    font-family: ${nunito_sans.style.fontFamily};
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    color: #646464;
   }
 `;
