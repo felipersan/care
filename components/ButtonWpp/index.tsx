@@ -5,13 +5,14 @@ import wppIcon from '../../public/images/wppIcon.png'
 
 interface IPropsButton {
   title?: string
+  onClick: () => void
 }
 
-export default function ButtonWpp({ title }: IPropsButton) {
+export default function ButtonWpp({ title, onClick }: IPropsButton) {
   return (
-    <S.Container>
+    <S.Container onClick={onClick}>
       <Image alt="ícone do WhatsApp" src={wppIcon} height={20} width={20} />
       <p>{title}</p>
     </S.Container>
-  )
+  );
 }

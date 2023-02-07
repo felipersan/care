@@ -72,6 +72,14 @@ const doubtsList = [
 ];
 
 export default function Home() {
+
+  const handleClick = () => {
+    const url = encodeURI(
+      `https://wa.me/+5521979383788`
+    );
+    window.location.href = url;
+  };
+
   return (
     <S.Container>
       <header className="headerHomePage">
@@ -120,7 +128,10 @@ export default function Home() {
             ]}
           />
           <div className="buttonWrapper">
-            <ButtonWpp title="CONVERSAR COM UM ATENDENTE" />
+            <ButtonWpp
+              onClick={handleClick}
+              title="CONVERSAR COM UM ATENDENTE"
+            />
             <p className="email">atendimento@carecontabilidade.com.br</p>
           </div>
         </div>
@@ -184,7 +195,7 @@ export default function Home() {
               ]}
             />
           </aside>
-          <ButtonWpp title="CONVERSAR COM UM ATENDENTE" />
+          <ButtonWpp onClick={handleClick} title="CONVERSAR COM UM ATENDENTE" />
         </article>
       </S.ThirdSection>
       <S.FourthSection>
@@ -204,7 +215,7 @@ export default function Home() {
           da Care é sempre auxiliar esses empresários de maneira justa e
           eficiente.
         </p>
-        <ButtonWpp title="SAIBA MAIS" />
+        <ButtonWpp onClick={handleClick} title="SAIBA MAIS" />
       </S.FourthSection>
       <S.FiveSection>
         <h2>MUDAR PARA O PJ PODE SER MAIS SIMPLES DO QUE VOCÊ IMAGINA</h2>
@@ -233,7 +244,7 @@ export default function Home() {
           Bem-vindo ao nosso FAQ! Aqui você encontrará as respostas para as
           perguntas mais comuns sobre nosso escritório de contabilidade. Se você
           não encontrar a informação que precisa, por favor, não hesite em{" "}
-          <a href="">entrar em contato conosco</a>.
+          <a href="https://wa.me/+5521979383788">entrar em contato conosco</a>.
         </span>
         {doubtsList.map((element, index) => {
           return (
