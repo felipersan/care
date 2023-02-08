@@ -5,7 +5,7 @@ import * as S from "../styles/pages/styles";
 import logo from "../public/images/logo.png";
 import bgStars from "../public/images/bgStars.png";
 import business from "../public/images/business.png";
-import alvo from "../public/images/business.png";
+import alvo from "../public/images/alvo.png";
 import List from "../components/List";
 import ButtonWpp from "../components/ButtonWpp";
 import QualityItem from "../components/QualityItem";
